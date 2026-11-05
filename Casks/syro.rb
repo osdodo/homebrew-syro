@@ -10,7 +10,15 @@ cask "syro" do
   desc "Native desktop workspace for running CLI coding agents across git worktrees"
   homepage "https://github.com/osdodo/syro"
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "syro.app"
+
+  # Ad-hoc signed, not notarized: without this Gatekeeper reports the app as damaged.
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/syro.app"],
+        writable_paths: ["syro.app"],
+        writable_base:  :appdir
+  end
 end

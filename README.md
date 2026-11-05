@@ -8,7 +8,9 @@ Homebrew tap for [Syro](https://github.com/osdodo/syro).
 brew install --cask osdodo/syro/syro
 ```
 
-The app is ad-hoc signed, not notarized. If macOS blocks it on first launch:
+The app is ad-hoc signed, not notarized. The cask removes the quarantine
+attribute after install so Gatekeeper does not report it as damaged. If you
+installed the app another way (e.g. the DMG) and macOS blocks it:
 
 ```bash
 xattr -dr com.apple.quarantine /Applications/syro.app
