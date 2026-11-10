@@ -1,9 +1,9 @@
 cask "syro" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.1.1"
-  sha256 arm:   "6daca630d9d799418052240edbb98e4508ff229ca0c7b3fff032fe865f28c2d2",
-         intel: "ca46a2cd6c524e277dd68684dbf3e42d518e9bb422348b1c8c77c096df135eea"
+  version "0.1.2"
+  sha256 arm:   "943fc5ed84e7d661ec86f319b399d8b3daa38a727a098a4786b052a001ecb348",
+         intel: "6d15c31a1965ed2389ca66284042e86bbfb3bd07a0976362f3d2d1c3081a213b"
 
   url "https://github.com/osdodo/syro/releases/download/v#{version}/syro-#{version}-macos-#{arch}.dmg"
   name "Syro"
